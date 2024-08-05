@@ -1,0 +1,109 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "AAA",
+      "image": "/src/assets/image/item1.svg"
+    },
+    {
+      "id": 2,
+      "name": "BBB",
+      "image": "/src/assets/image/item2.svg"
+    },
+    {
+      "id": 3,
+      "name": "CCC",
+      "image": "/src/assets/image/item3.svg"
+    },
+    {
+      "id": 4,
+      "name": "DDD",
+      "image": "/src/assets/image/item4.svg"
+    },
+    {
+      "id": 5,
+      "name": "EEE",
+      "image": "/src/assets/image/item5.svg"
+    },
+    {
+      "id": 6,
+      "name": "FFF",
+      "image": "/src/assets/image/item6.svg"
+    },
+    {
+      "id": 7,
+      "name": "JJJ",
+      "image": "/src/assets/image/item7.svg"
+    },
+    {
+      "id": 8,
+      "name": "GGG",
+      "image": "/src/assets/image/item8.svg"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Sản phẩm 1",
+      "image": "https://toplist.vn/images/800px/dong-phuc-atlan-370301.jpg",
+      "price": 300,
+      "category": "AAA"
+    },
+    {
+      "id": 2,
+      "name": "Sản phẩm 2",
+      "price": 700,
+      "image": "https://thoitrangmantis.com/wp-content/uploads/2019/02/dong-phuc-ao-phong-2019201.jpg",
+      "category": "BBB"
+    },
+    {
+      "id": 3,
+      "name": "Sản phẩm ",
+      "image": "https://tomko.com.vn/wp-content/uploads/2022/08/man-hinh-may-tinh-xoay-doc-danh-cho-coder-gia-re-2.jpg",
+      "price": 2500,
+      "category": "CCC"
+    },
+    {
+      "id": 4,
+      "name": "Sofa",
+      "price": 2400,
+      "image": "https://images.pexels.com/photos/276583/pexels-photo-276583.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "category": "DDD"
+    }
+  ],
+  "carts": [
+    {
+      "_id": 1,
+      "userId": 1,
+      "products": [
+        {
+          "ProductId": 1,
+          "quantity": 2,
+          "variants": [
+            {
+              "size": "M",
+              "color": "Red",
+              "quantity": 1
+            },
+            {
+              "size": "L",
+              "color": "Blue",
+              "quantity": 1
+            }
+          ]
+        },
+        {
+          "ProductId": 2,
+          "quantity": 1,
+          "variants": [
+            {
+              "size": "S",
+              "color": "Green",
+              "quantity": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
