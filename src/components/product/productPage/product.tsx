@@ -4,6 +4,7 @@ import { CategoryCT } from "../../../context/category.context";
 import { ICategory } from "../../../interface/category";
 import { ProductCT } from "../../../context/product.context";
 import { IProduct } from "../../../interface/product";
+import { Link } from "react-router-dom";
 
 const ProductPage = () => {
   const { products } = useContext(ProductCT);
@@ -43,17 +44,15 @@ const ProductPage = () => {
       {/* End banner */}
       <div className="flex items-center justify-around py-12 bg-white ">
         {displayedCategories.map((category: ICategory) => (
-          <div
-            key={category.id}
-            className="flex space-x-4 items-center p-4 bg-[#C6E3C1] rounded-md shadow-md"
-          >
-            <img
-              src={category.image}
-              alt="Eckige Töpfe"
-              className="w-20 h-auto"
-            />
-            <p className="mt-2 text-gray-700">{category.name}</p>
-          </div>
+          <Link to={`/category/${category.id}`}>
+            <div
+              key={category.id}
+              className="flex space-x-4 items-center p-4 bg-[#C6E3C1] rounded-md shadow-md hover:bg-gray-100"
+            >
+              <img src={category.image} alt="img" className="w-20 h-auto" />
+              <p className="mt-2 text-gray-700">{category.name}</p>
+            </div>
+          </Link>
         ))}
       </div>
       {/* end */}

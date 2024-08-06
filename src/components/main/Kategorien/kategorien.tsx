@@ -18,7 +18,7 @@ const Kategorien = () => {
       <div className="w-full p-12 mx-auto">
         <div className="grid grid-cols-4 gap-1">
           {categories.map((category: ICategory) => (
-            <Link to={`category/:${category.id}`}>
+            <Link to={`category/${category.id}`}>
               <div
                 key={category.id}
                 className=" group relative w-[303px] h-[374px] mx-auto "

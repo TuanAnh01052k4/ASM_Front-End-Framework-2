@@ -1,35 +1,48 @@
-import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useContext, useState, useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
+import { ProductCT } from "../../context/product.context";
+import { CategoryCT } from "../../context/category.context";
 import { IProduct } from "../../interface/product";
-import { GetCateById } from "../../services/category.service"; // Service mới tạo
+import ProductItem from "../product/product-item/product-item";
 
 const CategoryProducts = () => {
   const { id } = useParams();
-  const [products, setProducts] = useState<IProduct[]>([]);
+  const { products } = useContext(ProductCT);
+  const { categories } = useContext(CategoryCT);
+  const [selectedCategoryName, setSelectedCategoryName] = useState<
+    string | null
+  >(null);
+  const [filteredProducts, setFilteredProducts] = useState<IProduct[]>([]);
 
   useEffect(() => {
-    (async () => {
-      const data = await GetCateById(id as string | number);
-      setProducts(data);
-    })();
-  }, [id]);
+    // Lấy tên danh mục từ ID
+    const category = categories.find((cat) => cat.id.toString() === id);
+    if (category) {
+      setSelectedCategoryName(category.name);
+      const filtered = products.filter(
+        (product) => product.category === category.name
+      );
+      setFilteredProducts(filtered);
+    } else {
+      setSelectedCategoryName(null);
+      setFilteredProducts([]);
+    }
+  }, [id, categories, products]);
 
   return (
-    <div>
-      <h1>Products in Category {id}</h1>
-      <div className="grid grid-cols-3 gap-4">
-        {products.map((product) => (
-          <div key={product.id} className="p-4 border">
-            <img
-              src={product.image}
-              alt={product.name}
-              className="object-cover w-full h-48"
-            />
-            <h2 className="mt-2 text-xl font-bold">{product.name}</h2>
-            <p className="mt-1 text-gray-600">${product.price}</p>
-          </div>
-        ))}
-      </div>
+    <div className="container mx-auto my-10">
+      <h1>Sản phẩm thuộc danh mục: {selectedCategoryName}</h1>
+      
+        <div className="grid grid-cols-3 gap-4">
+          {filteredProducts.length > 0 ? (
+            filteredProducts.map((product) => (<Link to={`/deital/${product.id}`}>
+              <ProductItem key={product.id} product={product} /></Link>
+            ))
+          ) : (
+            <p>Không có sản phẩm nào trong danh mục này.</p>
+          )}
+        </div>
+      
     </div>
   );
 };

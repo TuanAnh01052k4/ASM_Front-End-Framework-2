@@ -105,5 +105,25 @@
         }
       ]
     }
+  ],
+  "users": [
+    {
+      "email": "anhntph34247@fpt.edu.vn",
+      "password": "$2a$10$kzadB2pqGnQwHWRntw6KLOr7yzfAKNsIGUdgYKsDPRn3T.P5qlxB2",
+      "name": "aaaaaaaaa",
+      "id": 1
+    },
+    {
+      "email": "anhntph34247@fpt.edu.vn1",
+      "password": "$2a$10$.eUXrRaJYTtHgMzj4Crmgu3DZENfJjgQOpdau.Tt9GMvl1KWk2gAS",
+      "name": "aaaaaa",
+      "id": 2
+    },
+    {
+      "email": "anhnguyen1524@gmail.com",
+      "password": "$2a$10$EDiDWBrEZFR6VtGqyXmpU.IRnuV7Qdqd2tTLzI3LGr.jF/.BrurIK",
+      "name": "aaaaaa",
+      "id": 3
+    }
   ]
 }

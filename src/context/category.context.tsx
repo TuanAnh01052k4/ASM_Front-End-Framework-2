@@ -70,10 +70,7 @@ const CategoryContext = ({ children }: Props) => {
     try {
       const category = await GetCateById(id);
       return category;
-    } catch (error) {
-      console.error(error);
-      return null;
-    }
+    } catch (error) {}
   };
 
   return (

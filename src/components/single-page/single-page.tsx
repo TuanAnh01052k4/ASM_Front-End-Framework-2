@@ -19,7 +19,7 @@ const ProductSingle = () => {
 
   return (
     <>
-      <div>
+      <div className="container mx-auto">
         <div className="flex w-full p-8 mx-auto">
           <div className="mx-auto">
             <img
@@ -92,7 +92,7 @@ const ProductSingle = () => {
           <p className="m-0">type and scrambled i</p>
         </div>
         {/* end */}
-        <div className="w-[1400px] p-6 mx-auto">
+        <div className="w-[1400px] p-6 mx-auto container">
           <h2 className="text-[20px] font-semibold text-green-600 underline-gradient">
             About
           </h2>
@@ -102,11 +102,6 @@ const ProductSingle = () => {
             ever since the 1500s, when an unknown printer took a galley of type
             and scrambled i
           </p>
-          <p className="[margin-block-start:0] [margin-block-end:9px]">
-            industry's standard dummy text ever since the 1500s, when an unknown
-            printer took a galley of
-          </p>
-          <p className="m-0">type and scrambled i</p>
         </div>
         {/* end */}
         <div className="flex justify-between w-full p-16 mx-auto ">

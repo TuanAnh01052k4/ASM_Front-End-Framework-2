@@ -14,9 +14,12 @@ const Header = () => {
   const { AppState, dispatch } = useContext(AppCT);
   const { register, handleSubmit } = useForm();
   const navigate = useNavigate();
+
   const onSubmit = (data: any) => {
     const { keywords } = data;
-    navigate(`/search?keywords=${keywords}`);
+    if (keywords.trim()) {
+      navigate(`/search?keywords=${encodeURIComponent(keywords.trim())}`);
+    }
   };
   return (
     <header className="w-full bg-custom-gradient">
@@ -178,7 +181,7 @@ const Header = () => {
               </NavLink>
               <NavLink to={""} className="flex items-center px-10 text-white">
                 Giỏ hàng
-                ({cart})
+                {/* ({cart}) */}
               </NavLink>
               <NavLink
                 to={""}

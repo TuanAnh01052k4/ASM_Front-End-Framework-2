@@ -4,7 +4,7 @@ import { ProductCT } from "../../../context/product.context";
 import { IProduct } from "../../../interface/product";
 import { CategoryCT } from "../../../context/category.context";
 import { ICategory } from "../../../interface/category";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const ProductPageMain = () => {
   const { products } = useContext(ProductCT);
@@ -80,7 +80,9 @@ const ProductPageMain = () => {
         <div className="flex">
           <div className="grid flex-grow grid-cols-3 gap-6">
             {filteredProducts.map((product: IProduct) => (
-              <ProductItem key={product.id} product={product} />
+              <Link to={`/deital/${product.id}`}>
+                <ProductItem key={product.id} product={product} />
+              </Link>
             ))}
           </div>
 
@@ -90,19 +92,21 @@ const ProductPageMain = () => {
             </h2>
             <div className="p-4 mb-6 bg-white rounded-md shadow-md">
               <ul className="space-y-2">
-                {categories.map((category: ICategory,  index: number | string) => (
-                  <li key={index}>
-                    <label>
-                      <input
-                        type="checkbox"
-                        className="mr-2"
-                        checked={selectedCategoryName === category.name}
-                        onChange={() => handleCategoryChange(category.id)}
-                      />
-                      {category.name}
-                    </label>
-                  </li>
-                ))}
+                {categories.map(
+                  (category: ICategory, index: number | string) => (
+                    <li key={index}>
+                      <label>
+                        <input
+                          type="checkbox"
+                          className="mr-2"
+                          checked={selectedCategoryName === category.name}
+                          onChange={() => handleCategoryChange(category.id)}
+                        />
+                        {category.name}
+                      </label>
+                    </li>
+                  )
+                )}
               </ul>
             </div>
             <div className="relative max-w-sm overflow-hidden bg-white rounded-lg shadow-md">
